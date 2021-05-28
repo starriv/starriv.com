@@ -1,4 +1,4 @@
-import db from '@/lib/firebase';
+// import db from '@/lib/firebase';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -17,9 +17,9 @@ export default async function handler(req, res) {
   }
 
   if (req.method === 'GET') {
-    const snapshot = await db.ref('views').child(req.query.slug).once('value');
-    const views = snapshot.val();
+    // const snapshot = await db.ref('views').child(req.query.slug).once('value');
+    // const views = snapshot.val();
 
-    return res.status(200).json({ total: views });
+    return res.status(200).json({ total: 0 });
   }
 }

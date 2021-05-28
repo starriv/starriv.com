@@ -5,6 +5,7 @@ import { useTheme } from 'next-themes';
 import NextLink from 'next/link';
 
 import Footer from '@/components/Footer';
+import ICP from '@/components/ICP';
 
 export default function Container(props) {
   const [mounted, setMounted] = useState(false);
@@ -16,9 +17,9 @@ export default function Container(props) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: 'Lee Robinson – Developer, writer, creator.',
+    title: 'Starriv',
     description: `Front-end developer, JavaScript enthusiast, and course creator.`,
-    image: 'https://leerob.io/static/images/banner.png',
+    // image: 'https://leerob.io/static/images/banner.png',
     type: 'website',
     ...customMeta
   };
@@ -82,11 +83,11 @@ export default function Container(props) {
           )}
         </button>
         <div>
-          <NextLink href="/dashboard">
+          {/* <NextLink href="/dashboard">
             <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
               Dashboard
             </a>
-          </NextLink>
+          </NextLink> */}
           <NextLink href="/blog">
             <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Blog</a>
           </NextLink>
@@ -104,6 +105,7 @@ export default function Container(props) {
       >
         {children}
         <Footer />
+        <ICP />
       </main>
     </div>
   );
