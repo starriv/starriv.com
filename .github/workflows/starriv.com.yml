@@ -21,10 +21,10 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install dependencies and build
-      run: |
-       yarn
-       yarn build 
+    - name: Install dependencies
+      run: yarn
+    - name: Build Application
+      run: yarn build
     -
       name: Set up QEMU
       uses: docker/setup-qemu-action@v1
@@ -38,7 +38,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     -
-      name: Build and push
+      name: Build Docker image and push
       uses: docker/build-push-action@v2
       with:
         context: .
