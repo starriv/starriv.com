@@ -27,16 +27,16 @@ export default function BlogLayout({ children, frontMatter }) {
         </h1>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
           <div className="flex items-center">
-            <Image
+            {/* <Image
               alt="Lee Robinson"
               height={24}
               width={24}
               src="/avatar.jpg"
               className="rounded-full"
-            />
+            /> */}
             <p className="text-sm text-gray-700 dark:text-gray-300 ml-2">
               {frontMatter.by}
-              {'Lee Robinson / '}
+              {'Starriv / '}
               {format(parseISO(frontMatter.publishedAt), 'MMMM dd, yyyy')}
             </p>
           </div>
