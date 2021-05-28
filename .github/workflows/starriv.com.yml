@@ -42,5 +42,5 @@ jobs:
         with:
           push: true
           tags: |
-            docker.pkg.github.com/${{ github.repository }}/starriv/starriv.com:${{ github.sha }}
-            docker.pkg.github.com/${{ github.repository }}/starriv/starriv.com:${{ github.ref }}
+            docker.pkg.github.com/${{ github.repository }}:${{ github.sha }}
+            docker.pkg.github.com/${{ github.repository }}:${{ github.branch }}
