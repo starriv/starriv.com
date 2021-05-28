@@ -22,7 +22,6 @@ jobs:
       run: yarn
     - name: Build Application
       run: yarn build
-    -
   build-and-push-image:
     runs-on: ubuntu-latest
     needs: run-npm-build
