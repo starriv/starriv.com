@@ -1,8 +1,8 @@
-import redis from '@/lib/redis';
+// import redis from '@/lib/redis';
 import Container from '@/components/Container';
-import Guestbook from '@/components/Guestbook';
+// import Guestbook from '@/components/Guestbook';
 
-export default function GuestbookPage({ initialEntries }) {
+export default function GuestbookPage() {
   return (
     <Container
       title="Guestbook – Lee Robinson"
@@ -16,24 +16,24 @@ export default function GuestbookPage({ initialEntries }) {
           Leave a comment below. It could be anything – appreciation,
           information, wisdom, or even humor. Surprise me!
         </p>
-        <Guestbook initialEntries={initialEntries} />
+        {/* <Guestbook initialEntries={initialEntries} /> */}
       </div>
     </Container>
   );
 }
 
 export async function getStaticProps() {
-  const entries = (await redis.hvals('guestbook'))
-    .map((entry) => {
-      const { email, ...restOfEntry } = JSON.parse(entry);
+  // const entries = (await redis.hvals('guestbook'))
+  // .map((entry) => {
+  // const { email, ...restOfEntry } = JSON.parse(entry);
 
-      return restOfEntry;
-    })
-    .sort((a, b) => b.id - a.id);
+  // return restOfEntry;
+  // })
+  // .sort((a, b) => b.id - a.id);
 
   return {
     props: {
-      initialEntries: entries
+      initialEntries: null
     },
     revalidate: 60
   };
