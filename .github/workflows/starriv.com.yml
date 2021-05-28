@@ -54,7 +54,7 @@ jobs:
             cd /root/starriv.com
             sed "s/image:\w\+/image:${{github.sha}}/" docker-compose.yml
             docker-compose stop
-            docker-compose rm
+            docker-compose rm -f
             docker-compose up -d
           host: ${{ secrets.QCLOUD_HOST }}
           user: root
