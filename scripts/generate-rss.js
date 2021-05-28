@@ -5,9 +5,9 @@ const matter = require('gray-matter');
 
 async function generate() {
   const feed = new RSS({
-    title: 'Lee Robinson',
-    site_url: 'https://leerob.io',
-    feed_url: 'https://leerob.io/feed.xml'
+    title: 'Starriv',
+    site_url: 'https://starriv.com',
+    feed_url: 'https://starriv.com/feed.xml'
   });
 
   const posts = await fs.readdir(path.join(__dirname, '..', 'data', 'blog'));
@@ -21,7 +21,7 @@ async function generate() {
 
       feed.item({
         title: frontmatter.data.title,
-        url: 'https://leerob.io/blog/' + name.replace(/\.mdx?/, ''),
+        url: 'https://starriv.com/blog/' + name.replace(/\.mdx?/, ''),
         date: frontmatter.data.publishedAt,
         description: frontmatter.data.summary
       });
