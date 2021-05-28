@@ -43,3 +43,19 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.repository }}/image:${{ github.sha }}
+  deploy-image:
+    runs-on: ubuntu-latest
+    needs: build-and-push-image
+    steps:
+      - name: auto deploy docker image
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            cd /root/starriv.com
+            sed "s/image:\w\+/image:${{github.sha}}/" docker-compose.yml
+            docker-compose stop
+            docker-compose rm
+            docker-compose up -d
+          host: ${{ secrets.QCLOUD_HOST }}
+          user: root
+          key: ${{ secrets.QCLOUD_PRIVATE_KEY}}
