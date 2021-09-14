@@ -16,7 +16,7 @@ export default function ICP() {
   return (
     <div className="flex justify-center">
       <ExternalLink href="http://www.beian.miit.gov.cn/">
-        粤ICP备15081728号-1
+        粤ICP备15081728号
       </ExternalLink>
     </div>
   );
