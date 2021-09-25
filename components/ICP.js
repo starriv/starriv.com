@@ -15,7 +15,7 @@ const ExternalLink = ({ href, children }) => (
 export default function ICP() {
   return (
     <div className="flex justify-center">
-      <ExternalLink href="http://www.beian.miit.gov.cn/">
+      <ExternalLink href="https://beian.miit.gov.cn/">
         粤ICP备15081728号
       </ExternalLink>
     </div>
