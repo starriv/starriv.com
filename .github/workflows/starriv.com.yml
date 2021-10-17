@@ -52,7 +52,7 @@ jobs:
         with:
           command: |
             cd /root/starriv.com
-            # sed "s/image:\w\+/image:${{github.sha}}/" docker-compose.yml
+            sed -i "s/image:\w\+/image:${{github.sha}}/" docker-compose.yml
             docker-compose pull
             docker-compose stop
             docker-compose rm -f
